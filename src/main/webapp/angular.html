@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app>
+    <head>
+        <title>Angular test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+    </head>
+    <body ng-controller="BarHistoryListCtrl">
+         <table class="table table-bordered table-hover table-striped tablesorter">
+             Cerca: <input ng-model="query">
+                <thead>
+                  <tr>
+                    <th>Symbol <i class="icon-sort"></i></th>
+                    <th>EntityName <i class="icon-sort"></i></th>
+                    <th>Assembly <i class="icon-sort"></i></th>
+                    <th>TypeName <i class="icon-sort"></i></th>
+                    <th>Enable <i class="icon-sort"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="row in rows | filter:query">
+                        <td><a href="#" id="symbol" data-type="text" data-pk="1" data-url="/update/barloader/symbol" data-title="Enter Symbol">{{row.symbol}}</a></td>
+                        <td><a href="#" id="entityName" data-type="text" data-pk="1" data-url="/update/barloader/entityName" data-title="Enter Entity Name">{{row.entityname}}</td>
+                        <td><a href="#" id="assembly" data-type="text" data-pk="1" data-url="/update/barloader/assembly" data-title="Enter Assembly">{{row.assembly}}</td>
+                        <td><a href="#" id="typeName" data-type="text" data-pk="1" data-url="/update/barloader/typeName" data-title="Enter Type Name">{{row.typename}}</td>
+                        <td><a href="#" id="enable" data-type="text" data-pk="1" data-url="/update/barloader/enable" data-title="Enable">{{row.enable}}</td>
+                    </tr>
+                </tbody>
+              </table>
+        </div>
+    </body>
+</html>
